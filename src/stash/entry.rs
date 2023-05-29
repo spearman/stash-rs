@@ -1,6 +1,7 @@
 use crate::index::Index;
 
 #[derive(Clone)]
+#[cfg_attr(feature = "serialization", derive(Deserialize, Serialize))]
 pub enum Entry<V> {
     Empty(usize /* next free index */),
     Full(V),
