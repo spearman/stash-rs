@@ -15,7 +15,7 @@
 //! However, in general, stashes make no guarantees on how keys are assigned. If stash **A** is
 //! serialized then deserialized into stash **B**, values inserted into stash **A** will likely be
 //! assigned different keys than values inserted into stash **B**.
-#![cfg_attr(not(any(feature = "std", test)), no_std)]
+#![cfg_attr(not(any(feature = "serde", test)), no_std)]
 
 extern crate alloc;
 extern crate unreachable;

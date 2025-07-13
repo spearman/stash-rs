@@ -340,6 +340,7 @@ where
     /// items are actually inserted as the Iterator is read. If the returned
     /// Iterator is dropped, the rest of the items will be inserted all at once.
     #[inline]
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn extend<I>(&mut self, iter: I) -> Extend<I, Ix>
     where
         I: Iterator<Item = V>,
@@ -353,6 +354,7 @@ where
     ///
     /// Returns an iterator that yields `(index, &value)` pairs.
     #[inline]
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn iter(&self) -> Iter<V, Ix> {
         Iter {
             len: self.len(),
@@ -365,6 +367,7 @@ where
     ///
     /// Returns an iterator that yields `(index, &mut value)` pairs.
     #[inline]
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn iter_mut(&mut self) -> IterMut<V, Ix> {
         IterMut {
             len: self.len(),
@@ -375,6 +378,7 @@ where
 
     /// Iterate over the values in this `Stash<V>` by reference.
     #[inline]
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn values(&self) -> Values<V> {
         Values {
             len: self.len(),
@@ -384,6 +388,7 @@ where
 
     /// Mutably iterate over the values in this `Stash<V>` by reference.
     #[inline]
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn values_mut(&mut self) -> ValuesMut<V> {
         ValuesMut {
             len: self.len(),
